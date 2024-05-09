@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigWeather</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="modal" id="myModal">
+        <div class="modal__content" id="modal__content">
+          <form class="modal__form">
+            <label for="cityName">Enter a City Name:</label>
+            <input type="text" id="cityName" name="cityName" class="modal__input">
+            <label for="unit">Select Units:</label>
+            <select name="unit" id="unit" class="modal__input">
+                <option value="metric">Celsius</option>
+                <option value="imperial">Fahrenheit</option>
+              </select>
+            <button type="submit" class="modal__submit-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    <div class="container">
+        <div class="weather-card" id="now">
+            <p class="weather-card__title weather-card__element weather-card__1fr">Now</p>
+            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
+            <div class="weather-card__temperature weather-card__element " >
+                <p class="temperature__value" id = "today-card-temp"></p>
+                <div class="temperature__icon"><img  alt="" id = "today-icon"></div>
+            </div>
+            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="today-condition"></p>
+           
+        </div>
+        <div class="weather-card" id="tomorrow">
+            <p class="weather-card__title weather-card__element weather-card__1fr">Tomorrow</p>
+            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
+            <div class="weather-card__temperature weather-card__element " >
+                <p class="temperature__value" id = "tomorrow-card-temp"></p>
+                <div class="temperature__icon"><img  alt="" id = "tomorrow-icon"></div>
+            </div>
+            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="tomorrow-condition"></p>
+           
+        </div>
+        <div class="weather-card" id="next-day">
+            <p class="weather-card__title weather-card__element weather-card__1fr">Next Day</p>
+            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
+            <div class="weather-card__temperature weather-card__element " >
+                <p class="temperature__value" id = "next-day-card-temp"></p>
+                <div class="temperature__icon"><img  alt="" id = "next-day-icon"></div>
+            </div>
+            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="next-day-condition"></p>
+            
+        </div>
+    </div>
+    <button>Click me</button>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
