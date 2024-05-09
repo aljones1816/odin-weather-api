@@ -1,60 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BigWeather</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="modal" id="myModal">
-        <div class="modal__content" id="modal__content">
-          <form class="modal__form">
-            <label for="cityName">Enter a City Name:</label>
-            <input type="text" id="cityName" name="cityName" class="modal__input">
-            <label for="unit">Select Units:</label>
-            <select name="unit" id="unit" class="modal__input">
-                <option value="metric">Celsius</option>
-                <option value="imperial">Fahrenheit</option>
-              </select>
-            <button type="submit" class="modal__submit-button">Submit</button>
-          </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatherly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app" class="app-container roboto-thin">
+      <div class="weather-info app__item">
+        <h2 class="weather-info__location">Boston</h2>
+        <div class="weather-info__details">
+          <h1 class="weather-info__details-temp">51F&deg;</h1>
+        </div>
+        <p class="weather-info__conditions">Cloudy</p>
+        <div class="weather-info__hilo">
+          <p class="weather-info__hi">H62F&deg;</p>
+          <p class="weather-info__lo">L55F&deg;</p>
         </div>
       </div>
-    <div class="container">
-        <div class="weather-card" id="now">
-            <p class="weather-card__title weather-card__element weather-card__1fr">Now</p>
-            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
-            <div class="weather-card__temperature weather-card__element " >
-                <p class="temperature__value" id = "today-card-temp"></p>
-                <div class="temperature__icon"><img  alt="" id = "today-icon"></div>
-            </div>
-            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="today-condition"></p>
-           
+      <div class="weather-forecast">
+        <div class="weather-forecast__hourly app__item">
+          <div class="weather-forecast__hourly-item">
+            <p>now</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>2</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>3</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>4</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>5</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>6</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>7</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
+          <div class="weather-forecast__hourly-item">
+            <p>8</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__hourly-icon">
+            <h2 class="weather-forecast-hourly-temp">52F&deg;</h2>
+          </div>
         </div>
-        <div class="weather-card" id="tomorrow">
-            <p class="weather-card__title weather-card__element weather-card__1fr">Tomorrow</p>
-            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
-            <div class="weather-card__temperature weather-card__element " >
-                <p class="temperature__value" id = "tomorrow-card-temp"></p>
-                <div class="temperature__icon"><img  alt="" id = "tomorrow-icon"></div>
+
+        <div class="weather-forecast__daily app__item">
+          <div class="weather-forecast__daily-item">
+            <h2 class="weather-forecast__daily-day">Today</h2>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__daily-icon">
+            <div class="weather-forecast__daily-hilo">
+              <p class="weather-forecast__daily-hi">H62F&deg;</p>
+              <p class="weather-forecast__daily-lo">L55F&deg;</p>
             </div>
-            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="tomorrow-condition"></p>
-           
-        </div>
-        <div class="weather-card" id="next-day">
-            <p class="weather-card__title weather-card__element weather-card__1fr">Next Day</p>
-            <p class="weather-card__location weather-card__element weather-card__1fr"></p>
-            <div class="weather-card__temperature weather-card__element " >
-                <p class="temperature__value" id = "next-day-card-temp"></p>
-                <div class="temperature__icon"><img  alt="" id = "next-day-icon"></div>
+          </div>
+          <div class="weather-forecast__daily-item">
+            <h2 class="weather-forecast__daily-day">Fri</h2>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__daily-icon">
+            <div class="weather-forecast__daily-hilo">
+              <p class="weather-forecast__daily-hi">H62F&deg;</p>
+              <p class="weather-forecast__daily-lo">L55F&deg;</p>
             </div>
-            <p class="weather-card__conditions weather-card__element weather-card__1fr" id="next-day-condition"></p>
-            
+          </div>
+          <div class="weather-forecast__daily-item">
+            <h2 class="weather-forecast__daily-day">Sat</h2>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" class="weather-forecast__daily-icon">
+            <div class="weather-forecast__daily-hilo">
+              <p class="weather-forecast__daily-hi">H62F&deg;</p>
+              <p class="weather-forecast__daily-lo">L55F&deg;</p>
+            </div>
+          </div>
+
         </div>
+      </div>
+      
     </div>
-    <button>Click me</button>
-    
-    <script src="./index.js"></script>
-</body>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
